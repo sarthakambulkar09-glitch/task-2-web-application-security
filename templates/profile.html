@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - SecureLab</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        SecureLab
+    </div>
+
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/profile">Profile</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+</nav>
+
+
+<main class="container">
+
+    <div class="welcome">
+        <div>
+            <p class="small-text">SECURITY TESTING PORTAL</p>
+
+            <h1>
+                Welcome, {{ user.name }}
+            </h1>
+
+            <p>
+                This dashboard is running locally for authorized
+                security testing.
+            </p>
+        </div>
+
+        <div class="role-badge">
+            {{ user.role }}
+        </div>
+    </div>
+
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <span>Account</span>
+            <strong>{{ username }}</strong>
+        </div>
+
+        <div class="stat-card">
+            <span>Role</span>
+            <strong>{{ user.role }}</strong>
+        </div>
+
+        <div class="stat-card">
+            <span>Environment</span>
+            <strong>LOCAL</strong>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Input Handling Test</h2>
+
+        <p class="muted">
+            Use this search function during your authorized
+            security assessment.
+        </p>
+
+        <form method="POST" action="/search">
+
+            <label for="query">
+                Search Query
+            </label>
+
+            <div class="search-row">
+
+                <input
+                    id="query"
+                    name="query"
+                    type="text"
+                    placeholder="Enter a search term"
+                    required
+                >
+
+                <button type="submit" class="button">
+                    Search
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div class="grid">
+
+        <div class="card">
+
+            <div class="card-icon">🔐</div>
+
+            <h3>Authentication</h3>
+
+            <p>
+                Login and session controls can be tested
+                in this application.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🛡️</div>
+
+            <h3>Input Security</h3>
+
+            <p>
+                Test how the application handles
+                user-controlled input.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">📊</div>
+
+            <h3>Security Review</h3>
+
+            <p>
+                Review application responses and
+                security headers.
+            </p>
+
+        </div>
+
+    </div>
+
+</main>
+
+</body>
+</html>
