@@ -1,0 +1,25 @@
+task-2-web-application-security
+
+├── app.py
+├── requirements.txt
+│
+├── templates
+│   ├── login.html
+│   ├── dashboard.html
+│   └── profile.html
+│
+├── static
+│   └── style.css
+│
+├── screenshots
+│   ├── 01-login-page.png
+│   ├── 02-successful-login.png
+│   ├── 03-invalid-login.png
+│   ├── 04-access-control.png
+│   ├── 05-input-handling.png
+│   ├── 06-security-headers.png
+│   └── 07-local-server.png
+│
+├── README.md
+├── test-cases.md
+└── vulnerability-report.md
