@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - SecureLab</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="login-body">
+
+    <div class="login-wrapper">
+
+        <div class="login-card">
+
+            <div class="brand">
+                <div class="brand-icon">S</div>
+                <div>
+                    <h1>SecureLab</h1>
+                    <p>Web Security Testing Portal</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <h2>Sign in</h2>
+            <p class="subtitle">
+                Local security testing environment
+            </p>
+
+            {% if error %}
+                <div class="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <form method="POST" action="/">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    id="username"
+                    name="username"
+                    type="text"
+                    placeholder="Enter username"
+                    autocomplete="username"
+                    required
+                >
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="Enter password"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button type="submit" class="button full">
+                    Login
+                </button>
+
+            </form>
+
+            <div class="test-info">
+                <strong>Local Test Accounts</strong>
+
+                <p>
+                    Admin: <code>admin / admin123</code>
+                </p>
+
+                <p>
+                    Student: <code>student / student123</code>
+                </p>
+            </div>
+
+            <p class="footer-note">
+                Educational security testing only.
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+  </html>
